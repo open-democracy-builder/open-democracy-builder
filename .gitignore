@@ -25,6 +25,13 @@
 /public/assets
 .byebug_history
 
+# Ignore environment variables.
+/config/environments/variables/default_config.yml
+/config/environments/variables/development_config.yml
+/config/environments/variables/production_config.yml
+/config/environments/variables/staging_config.yml
+/config/environments/variables/test_config.yml
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 

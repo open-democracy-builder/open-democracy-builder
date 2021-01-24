@@ -1,24 +1,28 @@
 # README
+# Configuration for development and test environments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```bash
+git clone https://github.com/open-democracy-builder/open-democracy-builder.git
+cd open-democracy-builder
+bundle install
+cp config/environments/variables/default_config.yml.example config/environments/variables/default_config.yml
+cp config/environments/variables/development_config.yml.example config/environments/variables/development_config.yml
+cp config/environments/variables/test_config.yml.example config/environments/variables/test_config.yml
+cp config/environments/variables/staging_config.yml.example config/environments/variables/staging_config.yml
+cp config/environments/variables/production_config.yml.example config/environments/variables/production_config.yml
+rails db:create
+rails db:migrate
+rails db:dev_seed
+RAILS_ENV=test rake db:setup
+```
 
-Things you may want to cover:
+Run the app locally:
 
-* Ruby version
+```bash
+rails s
+```
+Run the tests with:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+rspec
+```
